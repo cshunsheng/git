@@ -1,0 +1,78 @@
+
+# cd 改变目录  （change directory）
+cd images   #进入images文件夹
+cd ..      #进入上一层目录
+cd ~       #进入用户根目录
+
+# tab  自动补全，当我们输命令或者目录很长时，可以使用tab键进行自动补全。
+# 按两次tab，会把所有符合要求的内容都列出来。
+
+# pwd 打印当前目录的路径 （print work directory）
+pwd
+
+# ls 展示当前目录列表（list）
+ls         # 展示当前目录
+ls -a      # 展示全部内容，包括隐藏文件
+ls -l      # 以列表的形式展示内容
+
+# clear reset清屏
+clear  # 清除屏幕内容，滚动条，保留了历史
+reset  # 重置，历史记录没了。
+
+
+# mkdir  创建一个文件夹 （make directory）
+mkdir css          # 创建一个css的文件夹
+mkdir css img js   # 创建了三个文件夹
+
+# rmdir  删除一个空的文件夹（没啥用）
+rmdir img   # 删除文件夹
+
+# touch  创建文件
+touch index.html   #创建了一个index.html文件
+touch css/index.css # 在css目录下创建idnex.css文件
+
+# rm 删除一个文件获取文件夹
+rm index.html # 删除index.html文件
+rm js         # 删除空的js文件夹
+rm -r css     # 递归删除一个文件夹
+
+# mv 移动文件（move）
+mv index.html js            # 将html文件移动到js文件夹中
+mv index.html index2.html   # 将index.html重命名为index2.html
+
+# cp 复制文件（cp）
+cp index.html index2.html   # 复制index.html文件，命名为index2.html
+cp -r css css02             # 如果复制的是文件夹，需要使用-r参数。
+
+# cat 查看文件全部内容
+cat index.htmlgit init 初始化
+pwd 当前目录
+cat  file 显示文件
+git add 文件名    添加文件夹到暂缓区
+git  status   查询库状态
+git  commit -m "说明" 添加到master分支
+git log 查询版本号
+git log --pretty=oneline 版本号一行显示
+git reset --hard head^
+	head 当前版本
+	head^上个版本呢
+	head^^上上个版本
+	head~100 前100个版本
+git reset --hard 版本号前几位(自动识别, 不必写全)
+git reflog 查询所有所有版本号的记录
+git diff HEAD -- file 查看当前工作区和版本库的区别
+git checkout -- file
+	一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+	一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+	总之，就是让这个文件回到最近一次git commit或git add时的状态。
+git reset HEAD <file>可以把暂存区的修改撤销掉（unstage），重新放回工作区
+	场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。
+
+	场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作。
+
+	场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。
+git rm file 删除文件git
+
+git remote add origin git@github.com 里第一次
+
+git push origin master 提交到GitHub库
